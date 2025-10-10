@@ -16,6 +16,18 @@
   --font-outfit: var(--font-outfit);
 }
 
+@layer components {
+  .text-emphasis {
+    @apply text-red-500;
+  }
+  .section-container {
+    @apply container mx-auto min-h-screen px-4 md:px-8 pt-20 gap-10
+  }
+  .text-description {
+    @apply text-gray-700  dark:text-gray-300 text-lg leading-relaxed font-medium;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0f0f0f;
