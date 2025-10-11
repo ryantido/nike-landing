@@ -41,7 +41,8 @@ export default function HeroSection() {
         <div className="flex flex-wrap gap-10 mt-10">
           {stats.map(({ value, count, label }, i) => (
             <div key={i} className="flex flex-col items-start">
-              <span className="max-[402]:text-xl text-4xl sm:text-5xl font-extrabold text-slate-800  dark:text-gray-200">
+              <span className="max-[402px]:text-xl text-4xl sm:text-5xl font-extrabold text-slate-800  dark:text-gray-200">
+
                 <CountUp
                   delay={1}
                   end={value}
