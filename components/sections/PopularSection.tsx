@@ -46,6 +46,7 @@ export default function PopularSection() {
               className="object-cover object-center hover:scale-110 transition-transform duration-500 ease-in-out"
               alt="Best selling product"
               fill
+              loading="lazy"
             />
           </div>
         </div>
@@ -62,6 +63,7 @@ export default function PopularSection() {
             alt="alt image"
             width={500}
             height={500}
+            loading="lazy"
             className="object-cover object-center h-72 w-full rounded-2xl hover:scale-[1.02] transition-transform duration-300"
           />
           <Image
@@ -69,6 +71,7 @@ export default function PopularSection() {
             alt="alt image"
             width={500}
             height={500}
+            loading="lazy"
             className="object-cover object-center h-72 w-full rounded-2xl hover:scale-[1.02] transition-transform duration-300"
           />
           <Image
@@ -76,6 +79,7 @@ export default function PopularSection() {
             alt="alt image"
             width={1000}
             height={500}
+            loading="lazy"
             className="object-cover object-center col-span-2 w-full h-52 rounded-2xl hover:scale-[1.02] transition-transform duration-300"
           />
         </div>
