@@ -38,6 +38,25 @@ export default function NavBar() {
 
   const toggleButton = (): void => setIsMobileMenuOpen(!isMobileMenuOpen);
 
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string,
+  ) => {
+    e.preventDefault();
+    const id = href.replace("#", "");
+    const section = document.getElementById(id);
+    if (section) {
+      const offset = 70;
+      const top = section.offsetTop - offset;
+
+      window.scrollTo({
+        top,
+        behavior: "smooth",
+      });
+    }
+    setIsMobileMenuOpen(false);
+  };
+
   return (
     <header className="fixed top-0 z-50 h-14 w-full bg-transparent px-4 shadow-sm dark:shadow-white/5 backdrop-blur-lg grid items-center">
       <nav
@@ -65,6 +84,7 @@ export default function NavBar() {
                 <Link
                   href={href}
                   scroll={false}
+                  onClick={(e) => handleNavClick(e, href)}
                   aria-label={label}
                   aria-current={isActive ? "true" : undefined}
                   className={cn(
@@ -86,13 +106,12 @@ export default function NavBar() {
           onClick={toggleButton}
         >
           <span className="sr-only">Toggle menu</span>
-
           {isMobileMenuOpen ? <X /> : <Menu />}
         </button>
 
         <section
           className={cn(
-            "md:hidden fixed top-14 left-0 w-full bg-white/20 backdrop-blur-2xl z-40 shadow-md transition-all duration-300",
+            "md:hidden fixed top-14 left-0 w-full bg-white/20 backdrop-blur-3xl z-40 shadow-md transition-all duration-300",
             isMobileMenuOpen
               ? "max-h-screen opacity-100"
               : "max-h-0 overflow-hidden opacity-0",
@@ -108,6 +127,7 @@ export default function NavBar() {
                   <Link
                     href={href}
                     scroll={false}
+                    onClick={(e) => handleNavClick(e, href)}
                     aria-label={label}
                     aria-current={isActive ? "true" : undefined}
                     className={cn(
