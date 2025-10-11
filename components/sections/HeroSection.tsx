@@ -42,7 +42,6 @@ export default function HeroSection() {
           {stats.map(({ value, count, label }, i) => (
             <div key={i} className="flex flex-col items-start">
               <span className="max-[402px]:text-xl text-4xl sm:text-5xl font-extrabold text-slate-800  dark:text-gray-200">
-
                 <CountUp
                   delay={1}
                   end={value}
@@ -68,6 +67,7 @@ export default function HeroSection() {
             sizes="(max-width: 768px) 100vw, 50vw"
             className="object-contain object-center drop-shadow-2xl transition-transform duration-700 ease-in-out hover:scale-105"
             priority
+            loading="lazy"
           />
         </div>
 

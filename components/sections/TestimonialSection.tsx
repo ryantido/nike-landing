@@ -27,6 +27,7 @@ export default function TestimonialSection() {
                 alt={`${name} testimonial`}
                 height={90}
                 width={90}
+                loading="lazy"
                 className="rounded-full object-cover h-16 w-16 object-center shadow-lg"
               />
               <div>

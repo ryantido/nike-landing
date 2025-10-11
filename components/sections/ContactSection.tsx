@@ -37,6 +37,7 @@ export default function ContactSection() {
               alt="Nike Logo"
               width={150}
               height={150}
+              loading="lazy"
               className="object-cover"
             />
             <p className="text-description font-light max-w-sm text-amber-50 dark:text-gray-300">
